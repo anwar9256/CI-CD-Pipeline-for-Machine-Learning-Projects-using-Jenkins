@@ -1,0 +1,161 @@
+pipeline {
+    agent any
+
+    environment {
+        PATH = "$WORKSPACE/miniconda/bin:$PATH"
+        GITHUB_REPO = "https://github.com/Github-username/Github-repo-name.git"
+    }
+
+    stages {
+
+        stage('Repos') {
+            steps {
+                cleanWs(deleteDirs: true, notFailBuild: true, patterns: [[pattern: '*', type: 'INCLUDE']])
+
+                script {
+                    def srcBranch = env.CHANGE_BRANCH ?: env.BRANCH_NAME
+                    def baseBranch = env.CHANGE_TARGET ?: "stage"
+
+                    echo "[info] Pull Request Source Branch: ${srcBranch}"
+                    echo "[info] Pull Request Target Branch: ${baseBranch}"
+                    echo "[info] Current Branch: ${env.BRANCH_NAME}"
+                    echo "[info] Pull Request ID: ${env.CHANGE_ID ?: 'N/A'}"
+                    echo "[info] Pull Request Title: ${env.CHANGE_TITLE ?: 'N/A'}"
+
+                    // Checkout target branch
+                    checkout([
+                        $class: 'GitSCM',
+                        branches: [[name: "origin/${baseBranch}"]],
+                        userRemoteConfigs: [[credentialsId: "github-credential", url: "${GITHUB_REPO}"]]
+                    ])
+                }
+
+                sh '''
+                    echo '[info] Creating backup of current stage/prod data and model'
+                    rm -rf temp_ml || echo "[info] temp_ml not found — skipping"
+                    mkdir -p temp_ml
+                    cp data/project_mappings.csv temp_ml/project_mappings.csv || true
+                    cp output/search.index temp_ml/search.index || true
+                '''
+
+                script {
+                    def srcBranch = env.CHANGE_BRANCH ?: env.BRANCH_NAME
+                    def baseBranch = env.CHANGE_TARGET ?: "stage"
+
+                    checkout([
+                        $class: 'GitSCM',
+                        branches: [[name: "origin/${srcBranch}"]],
+                        userRemoteConfigs: [[credentialsId: "github-credential", url: "${GITHUB_REPO}"]]
+                    ])
+
+                    sh "git pull origin ${srcBranch} --rebase"
+                    sh "git checkout ${baseBranch} || git checkout -b ${baseBranch} origin/${baseBranch}"
+                    sh "git reset --hard origin/${baseBranch}"
+                    sh "git merge origin/${srcBranch} --no-edit"
+                }
+            }
+        }
+
+        stage("Setup ML Environment") {
+            steps {
+                sh '''
+                    bash -c "
+                    echo '[info] Setting up ML environment'
+                    if conda env list | grep -q sbar-code; then
+                        echo '[info] Environment exists, updating...'
+                        source activate sbar-code
+                        pip install -r requirements.txt
+                    else
+                        echo '[info] Creating new environment...'
+                        conda create -y -n sbar-code python=3.10
+                        source activate sbar-code
+                        pip install -r requirements.txt
+                    fi
+                    "
+                '''
+            }
+        }
+
+        stage("Functional Tests") {
+            steps {
+                sh '''
+                    bash -c "source activate sbar-code && python -m unittest discover -s test -p 'test*.py'"
+                '''
+            }
+        }
+
+        stage("Build Search Index") {
+            steps {
+                sh '''
+                    bash -c "source activate sbar-code && \
+                     echo '[info] Before running engine.py' > log.txt && \
+                     wc -l temp_ml/project_mappings.csv >> log.txt 2>&1 || echo 'temp backup not found' >> log.txt && \
+                     wc -l data/project_mappings.csv >> log.txt && \
+                     echo '[info] Running engine.py ...' && \
+                     python engine.py >> log.txt && \
+                     echo '[info] After running engine.py' >> log.txt && \
+                     wc -l temp_ml/project_mappings.csv >> log.txt 2>&1 || echo 'temp backup not found' >> log.txt && \
+                     wc -l data/project_mappings.csv >> log.txt"
+                '''
+            }
+        }
+
+        stage("Push Changes to Stage") {
+            steps {
+                script {
+                    sh '''
+                        bash -c "source activate sbar-code && python validate_changes.py >> log.txt"
+                    '''
+
+                    if (sh(returnStdout: true, script: "cat log.txt | tail -n 1")
+                        .contains("CHANGE VALIDATION: SUCCESS")) {
+
+                        echo "[info] Changes validated successfully, merging into stage"
+
+                        def msg = env.CHANGE_TITLE ?
+                            "[jenkins-server autocommit] JenkinsMerge :: ${env.CHANGE_TITLE}->#${env.CHANGE_ID}" :
+                            "[jenkins-server autocommit] JenkinsMerge :: ${env.BRANCH_NAME}"
+
+                        sh "git add ."
+                        sh "git commit -m \"${msg}\" || true"
+
+                        withCredentials([usernamePassword(
+                            credentialsId: "github-credentials",
+                            usernameVariable: 'GIT_USER',
+                            passwordVariable: 'GIT_TOKEN'
+                        )]) {
+                            sh """
+                                git config --global user.email 'jenkins-ci@yourdomain'
+                                git config --global user.name "${GIT_USER}"
+                                git remote set-url origin https://${GIT_USER}:${GIT_TOKEN}@github.com/Github-user-name/Github-repo-name.git
+                                git push origin stage
+                            """
+                        }
+                    } else {
+                        echo "[info] No valid changes detected. Aborting deployment."
+                        currentBuild.result = 'ABORTED'
+                    }
+                }
+            }
+        }
+
+        stage("Deploy Changes to Production") {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: "github-credentials",
+                    usernameVariable: 'GIT_USER',
+                    passwordVariable: 'GIT_TOKEN'
+                )]) {
+                    sh """
+                        git checkout prod
+                        git pull origin prod --rebase
+                        git merge stage --no-edit
+                        git push origin prod
+                        echo '[info] Triggering deploy to search bar server'
+                    """
+                }
+                build job: 'update-searchbar', parameters: []
+            }
+        }
+    }
+}

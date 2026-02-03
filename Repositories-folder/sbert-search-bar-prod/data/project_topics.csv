@@ -1,0 +1,235 @@
+title,topic_name
+Identifying Product Bundles from Sales Data Using R Language,Introduction
+Identifying Product Bundles from Sales Data Using R Language,Installing Libraries
+Identifying Product Bundles from Sales Data Using R Language,Understand the Data Set
+Identifying Product Bundles from Sales Data Using R Language,Outliers
+Identifying Product Bundles from Sales Data Using R Language,Clustering Techniques
+Identifying Product Bundles from Sales Data Using R Language,Installing Library to implement KMeans
+Identifying Product Bundles from Sales Data Using R Language,Steps in KMeans Algorithm
+Identifying Product Bundles from Sales Data Using R Language,Implementing Kmeans
+Identifying Product Bundles from Sales Data Using R Language,Cluster Model Deployment
+Identifying Product Bundles from Sales Data Using R Language,Hierarchical Clustering - Agglomerative Method
+Identifying Product Bundles from Sales Data Using R Language,Hierarchical Clustering - Divisive Method
+Identifying Product Bundles from Sales Data Using R Language,Silhoutte Score
+Identifying Product Bundles from Sales Data Using R Language,Cluster Goodness using Silhoutte score
+Identifying Product Bundles from Sales Data Using R Language,Model Based Clustering 
+Identifying Product Bundles from Sales Data Using R Language,Self Organizing Maps
+Identifying Product Bundles from Sales Data Using R Language,FactoExtra library for Visualization
+Identifying Product Bundles from Sales Data Using R Language,Other Clustering Methods 
+Identifying Product Bundles from Sales Data Using R Language,Hierarchical Clustering
+Identifying Product Bundles from Sales Data Using R Language,Hopkins Statistics
+Identifying Product Bundles from Sales Data Using R Language,Determine Optimal Number of Clusters
+Identifying Product Bundles from Sales Data Using R Language,Clustering Validation Statistics
+Identifying Product Bundles from Sales Data Using R Language,Advanced Clustering
+Identifying Product Bundles from Sales Data Using R Language,Conclusion
+Data Science Project-TalkingData AdTracking Fraud Detection,Problem Statement
+Data Science Project-TalkingData AdTracking Fraud Detection,Data Set
+Data Science Project-TalkingData AdTracking Fraud Detection,Install Libraries
+Data Science Project-TalkingData AdTracking Fraud Detection,Import Data Set
+Data Science Project-TalkingData AdTracking Fraud Detection,Data Set Overview
+Data Science Project-TalkingData AdTracking Fraud Detection,Next Steps
+Data Science Project-TalkingData AdTracking Fraud Detection,Recap in Rstudio
+Data Science Project-TalkingData AdTracking Fraud Detection,Missing Data
+Data Science Project-TalkingData AdTracking Fraud Detection,Analyse Click Time variable
+Data Science Project-TalkingData AdTracking Fraud Detection,Analyse Features
+Data Science Project-TalkingData AdTracking Fraud Detection,Convert variables to correct Data types
+Data Science Project-TalkingData AdTracking Fraud Detection,Exploratory Data Analysis
+Data Science Project-TalkingData AdTracking Fraud Detection,Model Creation using all Features 
+Data Science Project-TalkingData AdTracking Fraud Detection,Recap
+Data Science Project-TalkingData AdTracking Fraud Detection,Selecting Important Features
+Data Science Project-TalkingData AdTracking Fraud Detection,Tune length Parameter
+Data Science Project-TalkingData AdTracking Fraud Detection,Model Creation using selected Features
+Data Science Project-TalkingData AdTracking Fraud Detection,Split Data into Training and Testing
+Data Science Project-TalkingData AdTracking Fraud Detection,Data Balancing using SMOTE
+Data Science Project-TalkingData AdTracking Fraud Detection,Model Creation - Decision Tree
+Data Science Project-TalkingData AdTracking Fraud Detection,Model Creation - Random Forest
+German Credit Dataset Analysis to Classify Loan Applications,Introduction
+German Credit Dataset Analysis to Classify Loan Applications,Import Data Sets
+German Credit Dataset Analysis to Classify Loan Applications,Rename Columns
+German Credit Dataset Analysis to Classify Loan Applications,Next Steps
+German Credit Dataset Analysis to Classify Loan Applications,Import Libraries
+German Credit Dataset Analysis to Classify Loan Applications,Distribution of Columns
+German Credit Dataset Analysis to Classify Loan Applications,Different Approaches
+German Credit Dataset Analysis to Classify Loan Applications,Weight of Evidence (WOE)
+German Credit Dataset Analysis to Classify Loan Applications,Information Value (IV)
+German Credit Dataset Analysis to Classify Loan Applications,Compute WOE and IV
+German Credit Dataset Analysis to Classify Loan Applications,"Univariate, Bivariate and Multivariate "
+German Credit Dataset Analysis to Classify Loan Applications,Logistic Regression Introduction
+German Credit Dataset Analysis to Classify Loan Applications,Recap
+German Credit Dataset Analysis to Classify Loan Applications,Library Overview
+German Credit Dataset Analysis to Classify Loan Applications,Data Set Overview
+German Credit Dataset Analysis to Classify Loan Applications,Next Steps - Overview
+German Credit Dataset Analysis to Classify Loan Applications,Custom Functions
+German Credit Dataset Analysis to Classify Loan Applications,Function to Compute WOE and IV
+German Credit Dataset Analysis to Classify Loan Applications,Compute WOE and IV for each Variable
+German Credit Dataset Analysis to Classify Loan Applications,Variable Clustering
+German Credit Dataset Analysis to Classify Loan Applications,Training and Testing Sample
+German Credit Dataset Analysis to Classify Loan Applications,Logistic Regression
+German Credit Dataset Analysis to Classify Loan Applications,Logistic Regression - QnA
+German Credit Dataset Analysis to Classify Loan Applications,Decision Tree
+German Credit Dataset Analysis to Classify Loan Applications,Random Forest
+German Credit Dataset Analysis to Classify Loan Applications,Logistic Regression using important variables
+German Credit Dataset Analysis to Classify Loan Applications,Conditional Tree
+German Credit Dataset Analysis to Classify Loan Applications,Bayesian Learn Model
+German Credit Dataset Analysis to Classify Loan Applications,KSVM - Kernel Support Vector Machines
+German Credit Dataset Analysis to Classify Loan Applications,Neural Network
+German Credit Dataset Analysis to Classify Loan Applications,Compare all Models
+Churn Prediction in Telecom using Machine Learning in R,Introduction to the concept of churn
+Churn Prediction in Telecom using Machine Learning in R,Understanding of the data
+Churn Prediction in Telecom using Machine Learning in R,Data ingestion
+Churn Prediction in Telecom using Machine Learning in R,EDA
+Churn Prediction in Telecom using Machine Learning in R,Data cleaning
+Churn Prediction in Telecom using Machine Learning in R,Data preprocessing
+Churn Prediction in Telecom using Machine Learning in R,Model building
+Churn Prediction in Telecom using Machine Learning in R,Predictions and analysis
+Churn Prediction in Telecom using Machine Learning in R,Model insights
+Churn Prediction in Telecom using Machine Learning in R,Model deployment
+Churn Prediction in Telecom using Machine Learning in R,Modular code
+Churn Prediction in Telecom using Machine Learning in R,Miniconda installation
+Data Science Project on Wine Quality Prediction in R,Why we're using R and its benefits
+Data Science Project on Wine Quality Prediction in R,Introduction to Exploratory Data Analysis
+Data Science Project on Wine Quality Prediction in R,Exploring the key components of a dataset
+Data Science Project on Wine Quality Prediction in R,Data Munging
+Data Science Project on Wine Quality Prediction in R,Introducing the dataset and problem statement
+Data Science Project on Wine Quality Prediction in R,Univariate Plots Section
+Data Science Project on Wine Quality Prediction in R,Analysis of Plots
+Data Science Project on Wine Quality Prediction in R,Introduction to Boxplots
+Data Science Project on Wine Quality Prediction in R,Correlation and Bivariate Analysis
+Data Science Project on Wine Quality Prediction in R,Linear Model and Support Vector Machine Introductions
+Data Science Project on Wine Quality Prediction in R,Multivariate plot building and storyboarding
+Data Science Project on Wine Quality Prediction in R,Summarizing and beautifying the story
+Machine learning for Retail Price Recommendation with R,Price prediction business context
+Machine learning for Retail Price Recommendation with R,Price prediction introduction
+Machine learning for Retail Price Recommendation with R,EDA univariate analysis
+Machine learning for Retail Price Recommendation with R,EDA bivariate analysis
+Machine learning for Retail Price Recommendation with R,Checking and imputing missing values
+Machine learning for Retail Price Recommendation with R,Label encoding
+Machine learning for Retail Price Recommendation with R,Text cleaning
+Machine learning for Retail Price Recommendation with R,Understanding feature engineering
+Machine learning for Retail Price Recommendation with R,Implementation of count Vectorizer and TF-IDF
+Machine learning for Retail Price Recommendation with R,Understanding decision trees
+Machine learning for Retail Price Recommendation with R,Building a decision tree model
+Machine learning for Retail Price Recommendation with R,Understanding random forest
+Machine learning for Retail Price Recommendation with R,Building a random forest model
+Machine learning for Retail Price Recommendation with R,Understanding gradient boosting machines
+Machine learning for Retail Price Recommendation with R,Building a gradient boosting machine
+Machine learning for Retail Price Recommendation with R,Understanding support vector machines
+Machine learning for Retail Price Recommendation with R,Building a support vector machine
+Machine learning for Retail Price Recommendation with R,Understanding neural networks
+Machine learning for Retail Price Recommendation with R,Building a neural network model
+Machine learning for Retail Price Recommendation with R,Comparison of models and other potential approaches
+Time Series Analysis Project in R on Stock Market forecasting,Business context and objective
+Time Series Analysis Project in R on Stock Market forecasting,Translating the problem into a data science approach
+Time Series Analysis Project in R on Stock Market forecasting,Data importing and understanding
+Time Series Analysis Project in R on Stock Market forecasting,Time series decomposition
+Time Series Analysis Project in R on Stock Market forecasting,Data stationary
+Time Series Analysis Project in R on Stock Market forecasting,Understanding ARIMA model
+Time Series Analysis Project in R on Stock Market forecasting,Understanding evaluation parameters
+Time Series Analysis Project in R on Stock Market forecasting,Building tuning evaluating ARIMA model
+Time Series Analysis Project in R on Stock Market forecasting,Understanding holt-winters method
+Time Series Analysis Project in R on Stock Market forecasting,Implementing holt-winter model
+Time Series Analysis Project in R on Stock Market forecasting,Understanding neural networks
+Time Series Analysis Project in R on Stock Market forecasting,Implementing neural network model
+Time Series Analysis Project in R on Stock Market forecasting,Understanding VAR algorithm
+Time Series Analysis Project in R on Stock Market forecasting,Implementing VAR model
+Time Series Analysis Project in R on Stock Market forecasting,Accuracy comparison
+Time Series Analysis Project in R on Stock Market forecasting,Other potential approaches FB prophet
+Time Series Analysis Project in R on Stock Market forecasting,FB prophet user manual walkthrough
+Time Series Analysis Project in R on Stock Market forecasting,Other potential approaches ML regression
+Time Series Analysis Project in R on Stock Market forecasting,Other potential approaches DL LSTM
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Introduction to Problem Statement
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Dataset Overview
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Data PreProcessing
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Import Libraries
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Format Date
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Identify Missing Values
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Plotting univariate features
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Plotting bivariate features
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Identify Outliers
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Visualize energy usage
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Summary statistics using DPLYR
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Heat map for usage pattern
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Recap
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Model Data Preparation
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Correlations Table
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Feature Selection using Boruta
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Adding Dummy Variables to model
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Create Model using RFE control 
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,List chosen Features for prediction
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Training the Model
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Training the SVM and RF Model
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,Conclusion
+Data Science Project - Instacart Market Basket Analysis,Problem Statement Overview
+Data Science Project - Instacart Market Basket Analysis,Import Libraries
+Data Science Project - Instacart Market Basket Analysis,Market Basket Analysis
+Data Science Project - Instacart Market Basket Analysis,Transaction Set
+Data Science Project - Instacart Market Basket Analysis,Association Rules
+Data Science Project - Instacart Market Basket Analysis,Steps for creating Association Rules
+Data Science Project - Instacart Market Basket Analysis,Read the Data Set files
+Data Science Project - Instacart Market Basket Analysis,Explore the Data Set
+Data Science Project - Instacart Market Basket Analysis,Which day receives most orders?
+Data Science Project - Instacart Market Basket Analysis,Which department is purchased most?
+Data Science Project - Instacart Market Basket Analysis,Exploratory Data Analysis
+Data Science Project - Instacart Market Basket Analysis,Recoding the variables
+Data Science Project - Instacart Market Basket Analysis,Graphs
+Data Science Project - Instacart Market Basket Analysis,Prior Orders Placed 
+Data Science Project - Instacart Market Basket Analysis,Number of Items ordered
+Data Science Project - Instacart Market Basket Analysis,Association Rule Mining
+Data Science Project - Instacart Market Basket Analysis,Apriori Algorithm
+Data Science Project - Instacart Market Basket Analysis,Creating Association Rules 
+Data Science Project - Instacart Market Basket Analysis,Product Recommendations
+Data Science Project - Instacart Market Basket Analysis,Convert Rule to DataFrame
+Data Science Project - Instacart Market Basket Analysis,Remove Redundant Rules
+Data Science Project - Instacart Market Basket Analysis,Conclusion
+Credit Card Anomaly Detection using Autoencoders,Introduction to Anomaly Detection
+Credit Card Anomaly Detection using Autoencoders,"What, why, where anomaly detection?"
+Credit Card Anomaly Detection using Autoencoders,Business Context
+Credit Card Anomaly Detection using Autoencoders,Data importing and data understanding
+Credit Card Anomaly Detection using Autoencoders,Data preprocessing and EDA
+Credit Card Anomaly Detection using Autoencoders,EDA continued
+Credit Card Anomaly Detection using Autoencoders,Data preparation for model building
+Credit Card Anomaly Detection using Autoencoders,Understanding Neural Networks
+Credit Card Anomaly Detection using Autoencoders,Understanding Deep Neural networks
+Credit Card Anomaly Detection using Autoencoders,Understanding Autoencoders
+Credit Card Anomaly Detection using Autoencoders,Applications of Autoencoders
+Credit Card Anomaly Detection using Autoencoders,Understanding the Evaluation parameters
+Credit Card Anomaly Detection using Autoencoders,Building supervised learning model using H2O part-1
+Credit Card Anomaly Detection using Autoencoders,Building supervised learning model using H2O part-2
+Credit Card Anomaly Detection using Autoencoders,Precision and recall curve
+Credit Card Anomaly Detection using Autoencoders,Building unsupervised learning model using H2O
+Credit Card Anomaly Detection using Autoencoders,Model evaluation using reconstructed MSE
+Credit Card Anomaly Detection using Autoencoders,Different thresholds to improve specificity
+Credit Card Anomaly Detection using Autoencoders,Conclusion
+Credit Card Anomaly Detection using Autoencoders,Modular code overview
+Predict Macro Economic Trends using Kaggle Financial Dataset,Introduction & Installation
+Predict Macro Economic Trends using Kaggle Financial Dataset,Data Set Overview
+Predict Macro Economic Trends using Kaggle Financial Dataset,Problem Statement
+Predict Macro Economic Trends using Kaggle Financial Dataset,Data Analysis - Missing Values
+Predict Macro Economic Trends using Kaggle Financial Dataset,Recap
+Predict Macro Economic Trends using Kaggle Financial Dataset,Next Steps
+Predict Macro Economic Trends using Kaggle Financial Dataset,Why MICE
+Predict Macro Economic Trends using Kaggle Financial Dataset,Split Data Set into Train and Test
+Predict Macro Economic Trends using Kaggle Financial Dataset,Linear Regression - Assumptions
+Predict Macro Economic Trends using Kaggle Financial Dataset,Linear Regression - Model Creation
+Predict Macro Economic Trends using Kaggle Financial Dataset,Robust Linear Regression
+Predict Macro Economic Trends using Kaggle Financial Dataset,Ridge Regression
+Predict Macro Economic Trends using Kaggle Financial Dataset,Extreme Gradient Boosting
+Inventory Demand Forecasting using Machine Learning in R,Understanding business context and objective
+Inventory Demand Forecasting using Machine Learning in R,The approach
+Inventory Demand Forecasting using Machine Learning in R,Data importing and understanding the data
+Inventory Demand Forecasting using Machine Learning in R,Data cleaning
+Inventory Demand Forecasting using Machine Learning in R,EDA
+Inventory Demand Forecasting using Machine Learning in R,Feature engineering
+Inventory Demand Forecasting using Machine Learning in R,Significance of train test split
+Inventory Demand Forecasting using Machine Learning in R,Understanding bagging and boosting
+Inventory Demand Forecasting using Machine Learning in R,Understanding XGBoost
+Inventory Demand Forecasting using Machine Learning in R,Evaluation parameters and their meaning
+Inventory Demand Forecasting using Machine Learning in R,Building and tuning XGBoost model
+Inventory Demand Forecasting using Machine Learning in R,Understanding GBM
+Inventory Demand Forecasting using Machine Learning in R,Building GBM
+Inventory Demand Forecasting using Machine Learning in R,Tuning GBM and understanding light GBM
+Inventory Demand Forecasting using Machine Learning in R,Understanding SVM algorithm
+Inventory Demand Forecasting using Machine Learning in R,Building SVM model
+Inventory Demand Forecasting using Machine Learning in R,Model comparison and introduction to autoML
+Inventory Demand Forecasting using Machine Learning in R,LSTM
+Inventory Demand Forecasting using Machine Learning in R,Making production ready code

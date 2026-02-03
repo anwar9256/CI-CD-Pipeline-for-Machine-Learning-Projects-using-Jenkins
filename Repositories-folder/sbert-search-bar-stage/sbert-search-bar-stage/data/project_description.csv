@@ -1,0 +1,746 @@
+title,learn,description,domain
+Inventory Demand Forecasting using Machine Learning in R,Understanding the Business context and objectiveData CleaningInference about dataFeature EngineeringImporting the dataset and importing librariesTrain and test split for model validationSignificance of Train Test splitDifferent Evaluation parameters and their meaningUnderstanding Bagging and BoostingUnderstanding XGBoostHyperparameter TuningUnderstanding GBM and light GBMUnderstanding SVMBuilding XGBoost modelBuilding GBMBuilding SVM modelMaking Test predictions using the trained model.Model ComparisonIntroduction to autoML/H2OIntroduction to LSTM,"Business Overview
+&nbsp;
+Demand Forecasting is a process by which the future customer demand of any product is estimated by using the available data for the product. Demand forecasts are important to the most basic processes in any organization. To plan and deliver products and services is necessary to know what the future might hold. A demand forecast is important to plan all business decisions: sales, finance, production management, logistics and also marketing. To be able to predict next purchases is a valuable thing for any business. If we make the best forecast using data then it can help businesses to provide consumers with the right product at the right place at the right time which is very much important to business to get more profit margin.
+&nbsp;
+Aim
+To Forecast Inventory demand using historical sales data of Grupo Bimbo bakery products in R.
+&nbsp;&nbsp;
+Data Description
+The dataset used is from Mexican multinational company, Grupo Bimbo. The delivery chain is present in countries of America, Europe, Asia, and Africa. It has an annual sales volume of 15 billion dollars. Grupo Bimbo delivers fresh bakery products to 1 million stores along its 45,000 routes across Mexico. There are five datasets available. 
+&nbsp;
+
+train.csv: It contains data available for training. The dataset contains about 7.4 billion entries over 11 features. 
+train.csv: It contains data available for testing. 
+cliente_tabla.csv: It contains the data of 93 million clients over 2 different features.
+producto_tabla.csv : It contains the data for 2592 products.
+town_state.csv : It contains the data for 790 towns&nbsp;
+
+Tech Stack
+
+Language : R
+Libraries : dplyr, ggplot2, caTools, xgboost, data.table, Matrix, lightgbm, gbm, caret, zoo, DataCombine, e1071
+
+&nbsp;
+Approach 
+&nbsp;
+
+Exploratory data analysis (EDA)
+
+Data visualization
+Inference about features
+Feature engineering
+
+
+&nbsp;
+
+Data cleaning (outlier/missing values/categorical) 
+
+Missing value detection 
+Replacing special characters in data
+
+
+&nbsp;
+
+Feature Engineering
+
+Adding lag columns for target variable
+Adding moving average columns for target variable
+
+
+&nbsp;
+
+Model building on training data
+
+XGBoost
+GBM
+SVM
+
+
+&nbsp;
+
+Model validation
+
+RMSE
+
+
+&nbsp;
+
+Conclusion
+",Data Science
+Predict Macro Economic Trends using Kaggle Financial Dataset,"Understanding the problem statement
+Importing the Train and Test dataset directly from the source
+Performing basic EDA
+Checking for null values and making imputations using appropriate methods
+Dropping rows with null values
+Understanding how a Linear model works and underlying assumptions
+Multicollinearity, Autocorrelation, linearity and Normal distribution
+Applying Ridge  Regression for training
+Applying GLMnet model for training
+Applying elasticnet model for training
+Converting Dataframe into DMatrix
+Applying XGBoost model for making predictions
+Defining parameters for XGBoost
+Defining evaluation metrics
+Plotting graphs for the results obtained to select the best model
+Making final predictions with the best-selected model","Two Sigma is a technology company dedicated to finding value in the world&rsquo;s data. Since its founding in 2001, Two Sigma has built an innovative platform that combines extraordinary computing power, vast amounts of information, and advanced data science to produce breakthroughs in investment management, insurance, and related fields. Economic opportunity depends on the ability to deliver singularly accurate forecasts in a world of uncertainty.
+
+By accurately predicting financial movements, you will learn about scientifically-driven approaches to unlocking significant predictive capability.
+
+Two Sigma is excited to find predictive value and gain a better understanding of the skills offered by the global data science crowd.
+",Data Science
+Credit Card Anomaly Detection using Autoencoders,Understanding the problem statementImporting the dataset and importing librariesPerforming basic EDAData cleaning Imputing the null values filling them using the appropriate methodUsing ggplot to visualize the DatasetImporting h2o library and initializing an h2o clusterSplitting Dataset into Train and TestDefining parameters for training a Neural NetworkTraining the neural networkUnderstanding what is difference between Artificial Neural Networks and AutoencodersHow does an Autoencoder workLoading the pre-trained Neural NetworkHow to Autoencode a pre-trained Neural NetworksVisualizing the effectiveness of an Autoencoded model and a Neural Networks using ggplotMaking predictions using the trained model,"What is anomaly detection?
+Anomaly detection (aka outlier analysis) is a step in data mining that identifies data points, events, and/or observations that deviate from a dataset&rsquo;s normal behavior. Anomalous data can indicate critical incidents, such as a technical glitch, or potential opportunities, for instance, a change in consumer behavior.
+Applications of Anomaly detection
+
+
+Banking, Financial Services, and Insurance (BFSI) &ndash; In the banking sector, some of the use cases for anomaly detection are to flag abnormally high transactions, fraudulent activity, and phishing attacks.
+
+
+Retail &ndash; In Retail, anomaly detection is used for processing large volumes of financial transactions to identify fraudulent behaviors, such as identity theft and fraudulent credit card usage.
+
+
+Manufacturing &ndash; In Manufacturing, anomaly detection can be used in several important ways, such as identifying machines and tools that are underperforming, which can take months to find without anomaly detection technology.
+
+
+IT and Telecom &ndash; In IT and Telecommunications, anomaly detection is increasingly valuable to detect and act on personal threats to users, financial threats to service providers, or other types of unexpected threats.
+
+
+Defense and Government &ndash; In the Defence and Government setting, anomaly detection is best used for identifying excessive and fraudulent government spending, budgeting, and audits. This can save governments an immense amount of money.
+
+
+Healthcare &ndash; In Health Care, anomaly detection is used for its application in a crucial management task that can improve the quality of the health services and avoid loss of huge amounts of money. In terms of identifying fraudulent claims from hospitals and on the side of the insurance providers.
+
+
+Tech Stack&nbsp;
+
+
+Language used: R
+
+
+Machine Learning interface: H2O
+
+
+Other packages used: caret, e1071, ROCR, and many more
+
+
+Dataset Overview
+In this project, we will be using a credit card fraud dataset that represents fraudulent and legal transactions over a certain period. The data is available in a .csv format. In the dataset, we can see that&nbsp;most of the column names (V1 to V28)&nbsp; are not mentioned explicitly. This is because PCA (Principal Component Analysis)&nbsp; transformation has been performed on the original dataset&nbsp;to maintain the confidentiality of the data. Apart from these variables, we have a few explicit variables as follows
+
+
+Time - Difference in seconds between each transaction and its previous transaction
+
+
+Amount - Transaction Amount
+
+
+Class&nbsp;
+
+
+0 - Non-fraudulent transaction
+
+
+1 - Fraudulent Transaction
+
+
+
+
+Approach
+
+
+Business context and objective&nbsp;
+
+
+Translating into Data Science approach
+
+
+What, why, where Anomaly Detection?
+
+
+Why we are using a fraud dataset for this problem
+
+
+Algorithms used to solve this problem
+
+
+
+
+Data importing and Data Understanding
+
+
+Data Preprocessing&nbsp;
+
+
+&nbsp;Creating time variable
+
+
+
+
+EDA
+
+
+Preparing data for modelling
+
+
+Understanding neural networks and deep neural networks
+
+
+Understanding Autoencoders&nbsp;
+
+
+Unsupervised Learning using h2o
+
+
+Building model and Model Details
+
+
+
+
+Evaluation parameters understanding
+
+
+Evaluating based on Reconstructed MSE
+
+
+
+
+Supervised Learning using h2o&nbsp;
+
+
+Building and tuning supervised learning model using H2O
+
+
+
+
+Transfer learning&nbsp;
+
+
+Supervised Learning using Pretrained model and evaluation
+
+
+
+
+Precision-recall curve
+
+
+Try different thresholds to improve accuracy
+
+
+
+
+Making production-ready code
+
+",Data Science
+Data Science Project - Instacart Market Basket Analysis,Understanding the problem statementImporting a training dataset and testing from AWSInstalling necessary libraries and understanding its useStandard MBA or Market basket analysisUsing a predictive model to estimate the demand for a particular productProduct recommendation engine using collaborative filteringMerging the relevant CSV filesApplying the minimum support criteria to identify most frequent item setEclat algorithm and Apriori algorithmVisualizing the target variable with variation in timeConverting the variables to suitable datatypesVisualization of a time seriesVisualization using ggplotConvert the available information to a transactional datasetConverting the rules into a data frameSorting the values before recommending it to the company,"Whether you shop from meticulously planned grocery lists or let whimsy guide your grazing, our unique food rituals define who we are. Instacart, a grocery ordering&nbsp;and delivery app aim to make it easy to fill your refrigerator and pantry with your personal favorites and staples when you need them. After selecting products through the Instacart app, personal shoppers review your order and do the in-store shopping and delivery for you.
+Instacart&rsquo;s data science team plays a big part in providing this delightful shopping experience. Currently, they use transactional data to develop models that predict which products a user will buy again, try for the first time, or add to their cart next during a session. Recently, Instacart open-sourced this data - see their blog post on 3 Million Instacart Orders, Open Sourced.
+In this data science project, we are going to use this anonymized data on customer orders over time to predict which previously purchased products will be in a user&rsquo;s next order.",Data Science
+Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,"Understanding the problem statement
+Importing Dataset directly from AWS
+Understanding the attributes and their datatypes
+Importing important libraries and understanding its significance
+Using the summary function in R and interpreting its result
+Time stamping the column with time attributes
+Visualizing and understanding density plot
+Plotting a time series plot
+Understanding seasonality and trends
+Plotting box plot and whiskers plot for visualizing outliers
+Visualizing ggplot and Barplot
+Filling out null values and feature engineering
+Visualizing variables using panel graphs
+Selecting the best feature using RFE(Recursive Feature Elimination)
+Converting categorical into numerical vectors
+Applying Boosting model Gradient Boosting Model for training
+Applying linear model Linear Regression
+Applying SVM using different Kernels
+Selecting best evaluation metrics
+Plotting graphs for visualizing the results
+Selecting the best model for hyper-parameter tuning
+Using Grid Search CV to extract the best features
+Making final predictions and Saving them in form of CSV","This IoT project presents and discusses data-driven predictive models for the energy use of appliances. Data used include measurements of temperature and humidity sensors from a wireless network, whether from a nearby airport station and recorded energy use of lighting fixtures. The machine learning project discusses data filtering to remove non-predictive parameters and feature ranking.&nbsp;The data set is at 10 min for about 4.5 months. The house temperature and humidity conditions were monitored with a ZigBee wireless sensor network. Each wireless node transmitted the temperature and humidity conditions around 3.3 min. Then, the wireless data was averaged for 10 minutes periods. The energy data was logged every 10 minutes with m-bus energy meters. Weather from the nearest airport weather station (Chievres Airport, Belgium) was downloaded from a public data set from Reliable Prognosis (rp5.ru) and merged together with the experimental data sets using the date and time column. Two random variables have been included in the data set for testing the regression models and to filter out non-predictive attributes (parameters).&nbsp;
+",Data Science
+Time Series Analysis Project in R on Stock Market forecasting,"What is a Time Series?Visualizing a time series plotData used and understanding the dataExtract the trend, seasonality and random terms from the modelHow to decompose a time seriesHow to identify autocorrelation and partial autocorrelationHow to detrend a time seriesUnderstanding ARIMAUnderstanding SARIMAUnderstanding ETSUnderstanding Holt Exponential SmoothingUnderstanding Neural networkUnderstanding VAROther potential approaches like FBProphet, LSTM and so on.","Business Objective
+&nbsp;
+The main objective of this problem is to forecast stock market data using traditional and advanced state of the art algorithms. EuroStockMarket Dataset contains the daily closing prices of major European stock indices: Germany DAX (Ibis), Switzerland SMI, France CAC, and UK FTSE. The data are sampled in business time, i.e., weekends and holidays are omitted. The stock market can have a huge impact on the people and the countries economy as a whole and hence predicting the prices of stock can reduce the risk of loss and maximize the profit.
+&nbsp;
+
+&nbsp;
+Aim
+To predict the stock price
+&nbsp;
+&nbsp;
+Data Overview
+The data is from the EU Stock market with the following columns with a time index.
+
+DAX&nbsp;&nbsp;&nbsp; - Germany DAX Stock index
+SMI&nbsp;&nbsp;&nbsp;&nbsp; - Switzerland SMI Stock index
+CAC&nbsp;&nbsp; - France CAC Stock index
+FTSE - UK Stock index
+
+&nbsp;
+&nbsp;
+Tech Stack
+
+Language used : R
+Libraries used : FitAR, tseries, forecast, neuralnet and so on.
+
+&nbsp;
+&nbsp;
+Approach
+&nbsp;
+
+Data cleaning / Pre-processing (outlier/missing values/categorical) - 
+
+&nbsp;
+
+Extract the trend, seasonality and random terms from the model
+Decompose the time series
+Identify autocorrelation and partial autocorrelation
+Detrend a time series
+
+&nbsp;
+2. Holt winter Method
+
+Understanding holt winter method
+Building model and tuning
+Evaluation parameters understanding
+Evaluation
+
+&nbsp;
+3. ARIMA method
+
+Understanding ARIMA method
+Building model and tuning
+Evaluation
+
+&nbsp;
+&nbsp;
+4. VAR method
+
+Understanding VAR method
+Building model and tuning
+Evaluation
+
+&nbsp;
+5. Neural Network method
+
+Understanding neural network method
+Building model and tuning
+Evaluation
+
+&nbsp;
+6. Finalise Model 
+
+Which model will you finalize on and based on what metrics
+
+&nbsp;
+7. Comparison and other potential approaches
+&nbsp;
+8. Deployment 
+
+Making production ready code
+",Data Science
+Machine learning for Retail Price Recommendation with R,Performing basic EDAAdvanced EDA ideasChecking and handling null valuesPerforming slicing and making function for converting variables into categorical typesUnderstanding and using TFIDF for analyzing textual dataUnderstanding and using Count Vectorizer for analyzing textual dataApplying LabelBinarizer for textual dataBuilding and training a Random forest modelBuilding and training a SVM modelBuilding and training a Evaluation modelBuilding and training a Neural networks modelDrawing predictions from the trained modelEvaluating and fine tuning the modelBuilding API for the model using flask,"Business Objective
+Clothing has strong seasonal pricing trends and is heavily influenced by brand names, while electronics have fluctuating prices based on product specs.
+Mercari, Japan&rsquo;s biggest community-powered shopping app, knows this problem deeply. They&rsquo;d like to offer pricing suggestions to sellers, but this is tough because their sellers are enabled to put just about anything, or any bundle of things, on Mercari's marketplace.
+In this project, Mercari&rsquo;s challenging us to build an algorithm that automatically suggests the right product prices.
+Data Overview
+There are two files available. They are train.tsv and test.tsv
+Both are tab separated files
+The following are the data fields
+
+train_id or test_id - the id of the listing
+name - the title of the listing. Note that we have cleaned the data to remove text that looks like prices (e.g. $20) to avoid leakage. These removed prices are represented as [rm]
+item_condition_id - the condition of the items provided by the seller
+category_name - category of the listing
+brand_name
+price - the price that the item was sold for. This is the target variable that you will predict. The unit is USD. This column doesn't exist in test.tsv since that is what you will predict.
+shipping - 1 if shipping fee is paid by seller and 0 by buyer
+item_description - the full description of the item. Note that we have cleaned the data to remove text that look like prices (e.g. $20) to avoid leakage. These removed prices are represented as [rm]
+
+Source &nbsp;https://www.kaggle.com/c/mercari-price-suggestion-challenge/overview/description
+Aim 
+To predict the price of the product using the given description and other information
+Tech Stack
+
+Language used : R
+Packages used : superml, textstem, neuralnet, gbm, quantenda, and so on..
+UI support : R Shiny Dashboard
+
+Approach 
+
+Exploratory Data Analysis
+
+Exploratory data analysis is the process of analysing the dataset to understand its characteristics. In this step, we perform the following.
+
+
+Univariate analysis - Analysis of a single variable
+Bivariate analysis - Analysis of relationship between two variable
+
+
+
+Data cleaning / Pre-processing (outlier/missing values/categorical)
+
+Machine learning algorithms for regression can understand the input only in the form of numbers and hence it is highly essential to convert the non - numeric data that we have to numeric data by providing them labels.
+
+
+Label Encoding
+
+
+
+Missing value treatment
+
+This step involves the process of filling the missing values in appropriate ways so that the data is not lost.
+
+Feature Engineering
+
+CountVectorizer
+TFIDF for text data
+
+
+
+Modelling
+
+Various regression algorithms are applied on the dataset and the model that suits best for the dataset is selected. The models that we apply for this dataset are
+
+
+Random forest
+SVM
+Evaluation
+Neural networks
+Evaluation
+
+",Data Science
+Data Science Project on Wine Quality Prediction in R,Data ExplorationAsking the right questions for analysisData VisualisationStorytellingApplying regression models,"In this data science project, we will explore wine&nbsp;dataset for red wine quality. The objective is to explore which chemical properties influence the quality of red wines. As interesting relationships in the data are discovered, we&rsquo;ll produce and refine plots to illustrate them.
+We will learn how to ask the right questions for data analysis at certain points in the project. Finally, we would learn how to storyboard our analysis to create a final picture from our work to help decision makers understand how wine qualities were influenced.",Data Science
+Churn Prediction in Telecom using Machine Learning in R,"Understanding the business problem.Understanding what churn is, why to solve it and how to solve it.Importing the dataset and required libraries.Performing basic Exploratory Data Analysis (EDA).Data cleaning and missing data handling if required, using appropriate methods.Checking for class distributionsOutlier treatmentSplitting dataset as per requirementSampling the datasetLearn the install Keras in R and related librariesPerform Feature EngineeringBuilding model using KearsUnderstanding different performance metrics like Confusion matrix, AUC, Recall, F1-scoreBuilding feature importanceAnalysing the correlation plot and gaining insightsModel refinement and implementation","Have you ever heard of businesses implementing customer churn prediction in machine learning? This project will teach you everything you need to know about customer churn prediction in the telecommunications industry.
+Telecom Customer Churn Prediction Project Template Outcomes
+Customer attrition prediction is a challenge that almost all industries face, regardless of business size or operational strategy, whether you provide goods or services. It could be challenging to retain your existing customers with the business for as long as possible. Predicting churn rate, knowing your clients' demands, improving customer service, and understanding their reasons for leaving your company are crucial to retaining loyal customers over the long term. This project will help you understand how businesses can implement customer churn prediction in machine learning to retain customers, maintain customer loyalty and boost their revenue.
+
+Customer Churn Prediction Project Description
+According to research, customer attrition costs businesses more than 1.6 trillion dollars annually. The US daily newspaper subscription market has the most significant turnover rate of any industry at 60%. Around 20-25% and 20-38% of customers churn in the banking and telecommunications sectors. Software-as-a-Service (SaaS) companies reported 5-7% customer turnover rates. Companies use various techniques to handle customer attrition, including machine learning (ML) solutions that identify customers most likely to leave and prioritizing retention efforts to target the most vulnerable customers. One of the most common churn prediction strategies used by organizations is the identification of at-risk clients. This strategy has decreased customer churn by 35% of B2B firms.
+Business Objective of Customer Churn Prediction in Telecommunications
+In any service-providing industry, when a customer decides to stop using the service, either by canceling the subscription or not paying for the service, it&rsquo;s known as Customer Attrition. Churn refers to how many customers are not using the service for a certain period.
+Hence, customer churn is one of the essential metrics that every business must evaluate to grow. You can calculate the churn rate by dividing the number of lost customers by the last number of customers. Thus, a company churn rate must be as low as possible, ideally 0%.
+But why is it so important to calculate the churn rate? Does it affect the business if you lose around 5% of customers? The answer is that acquiring a new customer costs more than retaining the existing ones. Companies can spend less on operating costs to reach new customers by increasing customer retention.
+So, we will use advanced ML techniques to predict the potential churners who are about to leave a company&rsquo;s service and take the necessary steps to prevent it.
+This project aims to build a machine learning model to help predict customers likely to churn in the next N months and facilitate taking business actions to reduce the churn.
+Data Description for Customer Churn Prediction Project
+The Churn Prediction dataset is a dataset from Kaggle for predicting customer churn.
+The sample data you will use for this project is:
+Telco-Customer-Churn Dataset&ndash; This dataset has 7043 rows and 21 columns present.
+The training data has 21 features as follows:
+
+
+Churn &ndash; the target variable, if the customer churns or not (Yes / No)
+
+
+customerID &ndash; The unique identification of every customer
+
+
+gender- If the customer is a male or a female (Female / Male)
+
+
+SeniorCitizen &ndash; If the customer is a senior citizen or not (0 / 1)
+
+
+Partner &ndash; If the customer has a partner or not (Yes/No)
+
+
+Dependents &ndash; If the customer has any dependents (Yes / No)
+
+
+Tenure &ndash; The particular time period (months) the customer has stayed with the company.
+
+
+PhoneService &ndash; If the customer has a phone service or not (Yes/No)
+
+
+MultipleLines &ndash; If the customer has multiple lines or not (Yes/No/No Phone service)
+
+
+InternetService &ndash; If the customer has any internet service or not (DSL/ Fibre optics/ No)
+
+
+OnlineSecurity &ndash; If the customer has any online security (Yes/No/No internet service)
+
+
+OnlineBackup &ndash; If the customer has any online backup (Yes/No/No internet service)
+
+
+DeviceProtection &ndash; If the customer has device protection (Yes/No/No internet service)
+
+
+TechSupport &ndash; If the customer has tech support (Yes/ No/ No internet service)
+
+
+StreamingTV &ndash; If the customer has any streaming TV (Yes/ No/ No internet service)
+
+
+StreamingMovies &ndash; If the customer has streaming movies (Yes/ No/ No internet service)
+
+
+Contract &ndash; The customer term period with the company (Month-to-month, One year, Two years)
+
+
+PaperlessBilling &ndash; If the customer has paperless billing or not (Yes/ No)
+
+
+PaymentMethod &ndash; The payment mode of each customer (Electronic check, mailed check, Bank transfer, Credit card)
+
+
+MonthlyCharges &ndash; The amount that is charged to the customer every month
+
+
+TotalCharges &ndash; The total amount charged to the customer
+
+
+Aim of the Customer Churn Prediction Project
+To predict the customers' likely to churn in the next N months &amp; facilitate taking business actions to reduce the churn.
+Tech Stack used in the Customer Churn Prediction Project
+
+
+Language &ndash; R
+
+
+Libraries - Keras, dplyr, mice, ggplot2, recipes
+
+
+Solution Approach on How to Predict Customer Churn
+
+
+Importing the required libraries and reading the dataset.
+
+
+Understanding the dataset
+
+
+Exploratory Data Analysis (EDA)
+
+
+Data Visualization (Categorical and Numerical data)
+
+
+Feature Engineering
+
+
+Missing value imputation
+
+
+Using Recipe function
+
+
+Step discretization (Creating intervals)
+
+
+Step log
+
+
+Step dummy (One hot encoding)
+
+
+Step center (Mean centering)
+
+
+Step scale (Scaling the data)
+
+
+Model Building
+
+
+Performing train test split
+
+
+Keras sequential model building
+
+
+Compile the model
+
+
+Fit the model
+
+
+Model Validation
+
+
+Confusion Matrix
+
+
+AUC
+
+
+Recall value
+
+
+F1-Score
+
+
+Model Insights
+
+
+Feature Importance
+
+
+Correlation analysis
+
+
+Save the model &ndash; model deployment
+
+
+What is Customer Churn Prediction in Telecommunications?
+Customer churn is the likelihood of a customer quitting using a particular business or service provider. Customer churn prediction is a predictive analytics method that identifies at-risk customers, i.e., customers who may switch to another service provider or abandon their existing one for many reasons. Telecom companies commonly use customer attrition as a key business metric to forecast the number of customers who will leave a particular telecom service provider. Churn is crucial in the telecom sector since it directly impacts the service provider's ability to compete. To maintain profitability, the service provider must acquire new customers, which is not feasible since attracting new clients is expensive and challenging. Churn analysis is used by telephone service providers, Internet service providers, insurance businesses, etc., to forecast profitability because retaining existing clients is much cheaper than finding a new one.
+Need For Customer Churn Prediction in Telecommunications Industry
+
+By connecting 90% of the global population, telecommunications has emerged as one of the fastest-growing businesses. It is one of the industries where the customer base is crucial to generating revenue. With the most significant yearly churn rate of 20% to 40%, the telecommunications industry is seriously facing a considerable threat from customer attrition. The wireless telecom sector risks losing 27% of its consumers annually, leading to significant revenue churn. It is also evident that it costs 5 to 10 times more to add a new customer to a business than to retain an existing customer. Due to this, the company should focus more on keeping its existing customers than on acquiring new ones. Therefore, it is now widely accepted that the ideal marketing strategy is to keep current customers or, more simply, not lose customers. Machine learning algorithms are the most effective means of combating the steadily rising customer churn rate.
+Customer churn prediction using machine learning helps businesses in several ways.
+1. Determine Clients at Risk
+Machine learning systems can help businesses understand more about their customers by examining their behavioral patterns, which show how likely they are to abandon the company. The behavior patterns of consumers who have already terminated their contracts with the business can be analyzed using a machine learning algorithm and compared to current customers' behavior.
+2. Generate Higher Revenue
+Businesses can earn higher monthly recurring revenue with the help of customer churn prediction using machine learning. Greater profitability is always the outcome of enhancing the user experience and understanding their interests and preferences.
+3. Enhance Existing Products and Services
+ML-based churn analysis gives businesses reliable predictions of customer preferences, including the critical features in goods and services that ensure customer satisfaction and those they are dissatisfied with. Companies now have crucial information they can use to enhance existing products or develop new ones.
+How to Predict Customer Churn using Machine Learning?
+
+Implementing machine learning to forecast customer attrition can enable you to spot high-risk customers and comprehend the factors behind their inclination to leave. Data scientists require data to work with to undertake any ML project, and researchers specify the information they must gather based on their objectives. The acquired data is then cleaned, transformed, and preprocessed into a suitable format for developing churn prediction models using various techniques such as EDA, feature selection, feature engineering, etc. Another critical aspect of the task is determining the best ML strategies, optimizing the predictive models, and choosing the best performers. You can put a churn forecasting model into production after deciding which one generates forecasts with the maximum accuracy.
+In general, there are multiple steps involved in predicting customer retention using ML approaches:
+
+
+Identifying the problem and the objective,
+
+
+Data gathering,
+
+
+Data preparation and preprocessing,
+
+
+Model development and testing,
+
+
+Model deployment and monitoring.
+
+
+Let's explore each phase in more detail.
+
+
+Identifying the Business Problem and the Objective
+
+
+Data scientists must first decide what queries to address and whether to solve a classification or regression ML problem. Researchers choose which class or category the data points (customers, users, or partners) in the first scenario belong. Typically, churn/non-churner classifications are set based on past data. These labels represent the predicted responses from the ML training. Machine learning calculates how a target variable depends on other input values if you classify predicting customer churn as regression. Regression uses numbers in contrast to classification, which uses categories. You can, for instance, ask for probabilities of churn per client or estimate when a specific customer would be on the verge of leaving.
+
+
+Data Gathering
+
+
+After deciding the type of ML task (classification/regression), you must determine which data sources are essential for additional forecasting and modeling. You can acquire data from various sources, including customer feedback, social media reviews, analytics services, CRM systems (including sales and customer support records), and more.
+
+
+Data Preparation and Preprocessing
+
+
+At this point, it is necessary to translate historical data into a format that works best with machine learning. The primary objective, in this case, is to ensure that the entire dataset is consistent and that all input items are collected using the same approach. Next, you will form a collection of input features indicating various behavioral patterns. Although behavioral traits can vary from business to business, methods for identifying at-risk customers follow a similar pattern. Using exploratory data analysis (EDA), you can directly analyze the clean data to find any unusual data patterns or relationships between specific attributes and customer attrition. You will move on to feature engineering with the inputs from EDA and create new features from existing ones.
+
+
+Churn Model Development and Testing
+
+
+You will create a churn predictive model using machine learning at this stage. The optimal model in speed and accuracy is typically determined by training, tuning, and testing numerous machine learning models. They can represent any practical approach, including random forest, decision trees, and logistic regression. This stage also involves model evaluation, model performance analysis, and parameter tuning stages to acquire the most reliable and precise churn forecast from historical datasets. Logistic regression is suitable for handling binary classification tasks. It can forecast the probability of an outcome (features) by analyzing the relationship between one or more independent factors and a dependent variable. Random forest uses several decision trees to boost prediction accuracy and model stability.
+
+
+Customer Churn Model Deployment and Monitoring
+
+
+Once you create the churn prediction model for forecasting the churn rate, the best model is available for deployment. It can either be included in already-existing software or used as the foundation for a brand-new application. Data science professionals should constantly track model accuracy for predictive model improvement, i.e., to immediately make necessary changes or upgrades.
+Challenges Associated With Customer Churn Prediction
+
+The primary challenges that could prevent you from developing a successful churn model are as follows:
+
+
+Lack of a careful choice of an appropriate churn modeling strategy.
+
+
+Incorrect or unorganized customer data.
+
+
+Inadequate knowledge in the subject area.
+
+
+Product re-evaluation due to churn-causing changes in customer behavior
+
+
+Selection of KPIs to verify the performance of the churn model,
+
+
+Poor churn exploratory analysis.
+
+
+Customer Churn Prediction Examples
+
+1. OTT Streaming Platforms (Netflix)
+According to Netflix, the optimal user experience is one that users will gladly pay for. Giving consumers the flexibility to continue viewing what they want without interruptions is the only way to survive the OTT streaming battle. Netflix's customer retention strategy generates $1 billion annually and has a 2.3% customer attrition rate. The recommendation engine for Netflix includes detailed data on categorical features such as customer satisfaction, user demographics, etc. Netflix implements customer segmentation by organizing its customers into many categories using all the data available in its customer base. The Netflix recommendation engine evaluates each category's performance and prompts the user to make the right decisions. For its recommendations, Netflix employs a variety of ranking algorithms, including Top-N video ranking, customized video ranking, trending now ranker, continue viewing ranker, and many others. The process of row generation is then used for each algorithm to locate videos that fit a specific row.
+2. Media (The Financial Times)
+The Financial Times bases its onboarding processes on the idea that engagement primarily influences retention. Low usage after signup causes some early churn and restoring engagement after the early stages of the customer lifecycle are tricky. After the first 90 days, engagement becomes more difficult to impact, according to their internal research. Their onboarding aims to increase usage and promote activities that result in long-term engagement to prevent both short-term and long-term churn. It's crucial to monitor the client base to determine who departs and stays (and for what reasons) to succeed at customer retention. Typically, a solid combination of quantitative data (such as app and online analytics) and qualitative surveys (e.g., interviews with existing or ex-customers) provides this knowledge.
+3. SaaS (Software as a service) Providers&nbsp;
+According to Jonah Lopin, VP of Customer Success at HubSpot, the Customer Happiness Index, or CHI, is a measure of how much a customer is using inbound marketing in a way that is likely to produce long-term growth. HubSpot utilizes its Customer Happiness Index as a more extensive measure of success than customer attrition. The calculation of CHI takes into account several variables, including how often customers publish and track leads using HubSpot's system, if they execute email and conversion campaigns, whether they use social media and more. By monitoring their customers' CHI scores, HubSpot can retain about 33% of formerly unhappy clients. Furthermore, HubSpot determines customer acquisition costs (CAC) by dividing the overall cost of marketing and sales (Smarketing) by the total number of customers.
+FAQs on Customer Churn Prediction in Machine Learning
+1. What is churn prediction in telecom?
+Customer churn in telecom, also known as customer defection, or customer attrition, refers to the rate at which customers churn or abandon the services and products of that telecom company.&nbsp; Telecom businesses widely use customer attrition as a crucial business metric to forecast the number of consumers switching telecom service providers.
+2. How do you predict churn customers?
+You can predict churn customers with the help of data mining and ML techniques that calculate the risk of each customer leaving a business. However, calculating each customer's churn factor predicts churn for those preferring a simpler and more efficient approach.
+3. What causes churn in the telecom industry?
+Various factors can cause churn in the telecom industry, such as delayed or bad customer service, higher tariffs, new competitors' entry, poor service quality, etc.&nbsp;
+
+
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [{
+    ""@type"": ""Question"",
+    ""name"": ""What is churn prediction in telecom?"",
+    ""acceptedAnswer"": {
+      ""@type"": ""Answer"",
+      ""text"": ""Customer churn in telecom, also known as customer defection, or customer attrition, refers to the rate at which customers churn or abandon the services and products of that telecom company.  Telecom businesses widely use customer attrition as a crucial business metric to forecast the number of consumers switching telecom service providers.""
+    }
+  },{
+    ""@type"": ""Question"",
+    ""name"": ""How do you predict churn customers?"",
+    ""acceptedAnswer"": {
+      ""@type"": ""Answer"",
+      ""text"": ""You can predict churn customers with the help of data mining and ML techniques that calculate the risk of each customer leaving a business. However, calculating each customer's churn factor predicts churn for those preferring a simpler and more efficient approach.""
+    }
+  },{
+    ""@type"": ""Question"",
+    ""name"": ""What causes churn in the telecom industry?"",
+    ""acceptedAnswer"": {
+      ""@type"": ""Answer"",
+      ""text"": ""Various factors can cause churn in the telecom industry, such as delayed or bad customer service, higher tariffs, new competitors' entry, poor service quality, etc.""
+    }
+  }]
+}
+
+
+&nbsp;",Data Science
+German Credit Dataset Analysis to Classify Loan Applications,"Importing and understanding the datasetUnderstanding unbalanced data and converting class into factorsDividing the dataset into equal parts with equal distribution of both classesImputing for the null valuesDefining cross-validation, metrics, and preprocessing techniquesUnderstanding and implementing LOGISTIC REGRESSION and selecting important featuresApplying Bayesian model along with recursive partitioningImprove Logistic Results using Random ForestImplementing boosting like AdaBoost and GradientBoostingClassifier.Defining AUC-ROC score and getting in-depth knowledge of how it worksUsing Gini, AUC, and KS for evaluating modelUnderstanding Recall, Precision and F1scoreModel Improvement with  Gaussian RBF kernelDisplay Performance Reports and interpreting the sameVisualizing the result of each model via plot","The German credit dataset contains information on 1000 loan applicants. Each applicant is described by a set of 20 different attributes. Of these 20 attributes, seventeen attributes are discrete while three are continuous. The main idea is to use techniques from the field of information theory to select a set of important attributes that can be used to classify tuples. In this data science project, you will train a&nbsp;neural network using these attributes; the neural network is then used to classify tuples.",Data Science
+Data Science Project-TalkingData AdTracking Fraud Detection,"Understanding the problem statement
+Importing a training dataset and testing
+Installing necessary libraries and understanding its use
+Performing basic EDA and checking for null values
+Timestamping the necessary columns
+Checking for unique values and data types
+Checking for the relationship between different variables
+ Visualizing the distribution through ggplot
+Understanding Decision tree, random forest, logistic regression,SVM , boosting ,bagging models ,cart ,and neural network
+Defining the evaluation metrics
+Prediction using all the features by applying Logistic Regression
+Dividing the dataset into train and test dataset
+Data Balancing using Smote
+Applying Cross-Validation to avoid overfitting
+Using ""varImp"" function in R to get the best features fo the model
+Applying ensemble method Random Forest model
+Applying bagging model Decision Tree 
+Applying linear model Logistic Regression 
+Using the confusion matrix to visualize the predictions 
+Selecting the final model and making predictions on the test dataset","Fraud risk is everywhere, but for companies that advertise online, click fraud can happen at an overwhelming volume, resulting in misleading click data and wasted money. Ad channels can drive up costs by simply clicking on the ad at a large scale. With over 1 billion smart mobile devices in active use every month, China is the largest mobile market in the world and therefore suffers from huge volumes of fraudulent traffic.&nbsp;
+
+In this machine learning project, you will build a machine learning model to determine whether a click is fraud or not.
+",Data Science
+Identifying Product Bundles from Sales Data Using R Language,"Understanding the problem StatementImporting the dataset directly from Amazon AWSWhat is ClusteringPerforming basic EDA and Data-preprocessingPlotting Boxplot and checking for identifying outliersFixing outliers using proper techniqueScaling and normalizing the datasetPartition based methods, Hierarchical Methods, Model-based methods of clusteringKmeans, k-median, k-mode agglomerative, divisive expectation-maximization based methodsIdentifying different libraries used for ClusteringSteps involved in K-clusteringApplying different methods available for clusteringApplying the silhouette score on the clustering result Visualizing the result by plotting graphsPicking the best model for making predictionsCalculating probability related to testing data points for different clusters","The weekly sales transaction dataset consists of&nbsp;weekly purchased quantities of 800 products over 52 weeks. Normalised values are provided too. The objective of this data science project in R is to find out product bundles that can be put together on sale. Typically Market Basket Analysis was used to identify such bundles, here we are going to compare the relative importance of time series clustering in identifying product bundles.",Data Science

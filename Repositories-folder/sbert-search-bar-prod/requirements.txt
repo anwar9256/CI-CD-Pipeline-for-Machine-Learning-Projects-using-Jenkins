@@ -1,0 +1,19 @@
+numpy==1.24.3
+pandas==1.5.3
+nltk==3.6.5
+tqdm==4.64.0
+openpyxl==3.0.10
+pymongo[srv]==4.2.0
+streamlit==1.13.0
+faiss-cpu==1.7.2
+altair==4.0.0
+
+# NLP stack
+spacy==3.2.4
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.2.0/en_core_web_sm-3.2.0-py3-none-any.whl
+
+transformers==4.28.1
+sentence-transformers==2.2.2
+
+# Huggingface hub
+huggingface-hub==0.13.4
